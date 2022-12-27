@@ -13,8 +13,12 @@ import{
   BrowserRouter
 } from 'react-router-dom';
 import { Footer } from './scenes/global/Footer.js';
-import { Slider } from './Components/Slider.js';
-
+import Login from './scenes/login/Login'
+import Register from './scenes/register/Register.js';
+import Men from './scenes/global/Men'
+import Women from './scenes/global/Women'
+import Shoe from './scenes/global/Shoe'
+import Kid from './scenes/global/Kids'
 const ScrolltoTop = () =>
 {
     const {pathname} = useLocation();
@@ -28,7 +32,7 @@ const ScrolltoTop = () =>
 }
 function App() {
   return (
-    <div >
+    <div>
       <BrowserRouter>
           <Navbar/>
           <ScrolltoTop />
@@ -37,10 +41,15 @@ function App() {
             <Route path="item/:itemId" element={<ItemDetails/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="confirmation" element={<Confirmation/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/Men" element={<Men/>}/>
+            <Route path="/Women" element={<Women/>}/>
+            <Route path="/Kid" element={<Kid/>}/>
+            <Route path="/Shoe" element={<Shoe/>}/>
           </Routes>
           <CartMenu/>
       </BrowserRouter>
-      <Home/>
       <Footer/>
     </div>
   );

@@ -5,7 +5,7 @@ import Image from '../ALAN.svg';
 export const Footer = () => {
   return (
     <Box
-    position="absolute"
+    position="relative"
     backgroundColor="black"
     color="white"
     justifyContent="center"

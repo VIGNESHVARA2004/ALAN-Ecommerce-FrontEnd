@@ -47,10 +47,10 @@ export default function Navbar() {
               columnGap = "40px"
               sx={{"&:hover" : {cursor :"pointer"}}}
             >
-              <Link to="/product/1" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Men</Typography></Link>
-              <Link to="/product/2" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Women</Typography></Link>
-              <Link to="/product/3" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Kids</Typography></Link>
-              <Link to="/product/4" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Footwear</Typography></Link>
+              <Link to="/Men" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Men</Typography></Link>
+              <Link to="/Women" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Women</Typography></Link>
+              <Link to="/Kid" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Kids</Typography></Link>
+              <Link to="/Shoe" style={{textDecoration:"none"}}><Typography color="primary" fontSize="17px" fontWeight="600">Footwear</Typography></Link>
               
             </Box>
             <Box  component="img"
@@ -71,7 +71,7 @@ export default function Navbar() {
                   <SearchOutlined sx={{fontSize : "25px"}}/>
                 </IconButton>
 
-                <IconButton color='primary' size="small">
+                <IconButton color='primary' size="small" onClick={() => navigate("/login")}>
                   <PersonOutline sx={{fontSize : "25px"}}/>
                 </IconButton>
                 <Badge

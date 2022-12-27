@@ -115,10 +115,11 @@ const CartMenu = () => {
                                     sx={{
                                         backgroundColor:"black",
                                         color:"white",
-                                        borderRadius:1.5,
+                                        border:1.5,
+                                        borderBlockStyle:"solid",
                                         borderColor:"white",
                                         minWidth:"100%",
-                                        padding:"20px 40px",
+                                        padding:"10px 20px",
                                         m : "20px 0"
                                     }}
                                     onClick={()=>{navigate("/checkout"); dispatch(setIsCartOpen({}))}}
