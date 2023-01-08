@@ -1,9 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import Home from './scenes/home/Home.js';
-import Checkout from './scenes/checkout/Checkout.jsx';
-import Confirmation from './scenes/checkout/Confirmation.jsx';
-import ItemDetails from './scenes/itemDetails/ItemDetails.jsx';
+import Checkout from './scenes/checkout/Checkout.js';
+import Confirmation from './scenes/checkout/Confirmation.js';
 import Navbar from './scenes/global/Navbar';
 import CartMenu from './scenes/global/CartMenu.js';
 import{
@@ -15,10 +14,11 @@ import{
 import { Footer } from './scenes/global/Footer.js';
 import Login from './scenes/login/Login'
 import Register from './scenes/register/Register.js';
-import Men from './scenes/global/Men'
-import Women from './scenes/global/Women'
-import Shoe from './scenes/global/Shoe'
-import Kid from './scenes/global/Kids'
+import Women from './scenes/Women/Women.js';
+import Footwear from './scenes/Footwear/Footwear.js'
+import Kids from './scenes/Kids/Kids.js';
+import Men from './scenes/Men/Men.js'
+import ProductDetails from './scenes/ProductDetails/ProductDetails.js';
 const ScrolltoTop = () =>
 {
     const {pathname} = useLocation();
@@ -38,15 +38,15 @@ function App() {
           <ScrolltoTop />
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="item/:itemId" element={<ItemDetails/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
-            <Route path="confirmation" element={<Confirmation/>}/>
+            <Route path="/confirmation" element={<Confirmation/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/Men" element={<Men/>}/>
             <Route path="/Women" element={<Women/>}/>
-            <Route path="/Kid" element={<Kid/>}/>
-            <Route path="/Shoe" element={<Shoe/>}/>
+            <Route path="/Kid" element={<Kids/>}/>
+            <Route path="/Shoe" element={<Footwear/>}/>
+            <Route path="/ProductDetail" element={<ProductDetails/>}/>
           </Routes>
           <CartMenu/>
       </BrowserRouter>

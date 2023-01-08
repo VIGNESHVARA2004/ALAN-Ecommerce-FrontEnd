@@ -34,7 +34,7 @@ import { useNavigate } from 'react-router-dom'
           </form>
           </div>
           <div className="term">
-            <p> By clicking ‘Become a member’, I agree to the H&M Membership <strong className="T">Terms and conditions.</strong><br/><br/>
+            <p> By clicking ‘Become a member’, I agree to the ALAN Membership <strong className="T">Terms and conditions.</strong><br/><br/>
             To give you the full membership experience, we will process your personal data in accordance with the H&M's <strong className="T">Privacy Notice.</strong>
             </p>
             <div className="agree"><p onClick={() => navigate("/login")}>Become a Member</p></div>

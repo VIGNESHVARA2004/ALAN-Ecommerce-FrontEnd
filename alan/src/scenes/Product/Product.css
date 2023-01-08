@@ -1,0 +1,14 @@
+.image .secondImg{
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: 1;
+}
+.image:hover .secondImg{
+    opacity: 0;
+}
+.product:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}

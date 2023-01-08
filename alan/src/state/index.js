@@ -15,16 +15,19 @@ export const cartSlice = createSlice({
         },
 
         addToCart : (state,action) =>{
-            state.cart = [...state.cart, action.payload.item];
+            const item = state.cart.find((item) => item.slug.current === action.payload.item.slug.current)
+            if(!item){
+                state.cart = [...state.cart, action.payload.item];
+            }
         },
 
         removeFromCart : (state,action) =>{
-            state.cart = state.cart.fliter((item) => item.id !== action.payload.id);
+            state.cart = state.cart.filter((item) => item.slug.current !== action.payload.slug.current);
         },
 
         increaseCount : (state,action) => {
             state.cart = state.cart.map((item) =>{
-                if(item.id === action.payload.id){
+                if(item.slug.current === action.payload.slug.current){
                     item.count++;
                 }
                 return item
@@ -33,7 +36,7 @@ export const cartSlice = createSlice({
 
         decreaseCount : (state,action) => {
             state.cart = state.cart.map((item) =>{
-                if(item.id === action.payload.id && item.count > 1){
+                if(item.slug.current === action.payload.slug.current && item.count > 1){
                     item.count--;
                 }
                 return item

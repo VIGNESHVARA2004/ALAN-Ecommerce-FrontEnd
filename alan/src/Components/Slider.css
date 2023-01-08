@@ -16,3 +16,7 @@
     height : 100%;
     object-position: top;
 }
+img{
+    width:"1920px";
+    height:"calc(100vh-100px)";
+}

@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import styled from '@emotion/styled';
+import {urlFor} from '../../lib/client';
 
 import{
     decreaseCount,
@@ -28,7 +29,7 @@ const CartMenu = () => {
     const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
     const totalPrice = cart.reduce((total,item) =>  {
-        return total+item.count * item.attributes.price;
+        return total+item.count * item.currentPrice;
     },0);
 
     return(
@@ -49,32 +50,35 @@ const CartMenu = () => {
                     width= "max(400px,30%)"
                     height = "100%"
                     backgroundColor = "black"
+                    color ="white"
                     >
-                        <Box padding ="30px" overflow="auto" height="100%">
+                        <Box padding ="30px" overflow="auto" height="100%" marginTop= "100px">
                             <FlexBox mb="15px">
-                                <Typography variant="h3">SHOPPING BAG ({cart.length})</Typography>
+                                <Typography variant="h5" sx={{fontWeight:400}}>SHOPPING BAG ({cart.length})</Typography>
                                 <IconButton onClick = {() => dispatch(setIsCartOpen)}>
                                     <CloseIcon/>
                                 </IconButton>
                             </FlexBox>
                             <Box>
                                 {cart.map((item) => (
-                                    <Box key={`${item.attributes.name}-${item.id}`}>
-                                        <FlexBox p ="15px 0">
+            
+                                    <Box key={`${item.name}-${item.slug}`}>
+                                        {console.log(item.slug)}
+                                        <FlexBox>
                                             <Box flex="1 1 40%">
-                                                /*<img
-                                                    alt={item.attributes.name}
+                                                <img
+                                                    alt={item.name}
                                                     width="123px"
                                                     height="164px"
-                                                    /*src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}*/
-                                                />*/
+                                                    src={urlFor(item.image[1])}
+                                                />
                                             </Box>
-                                            <Box flex="1 1 60%">
+                                            <Box flex="1 1 60%" justifyItems="left">
                                                 <FlexBox mb="5px">
-                                                    <Typography fontWeight="bold">
-                                                        {item.attributes.name}
+                                                    <Typography variant="h4" fontWeight="100">
+                                                        {item.name}
                                                     </Typography>
-                                                    <IconButton onClick={() => dispatch(removeFromCart({ id : item.id}))}>
+                                                    <IconButton sx={{color:"white"}} onClick={() => dispatch(removeFromCart(item))}>
                                                         <CloseIcon/>
                                                     </IconButton>                                                
                                                 </FlexBox>
@@ -85,19 +89,21 @@ const CartMenu = () => {
                                                         border={`1.5px solid white`}
                                                         >
                                                         <IconButton
-                                                            onClick={() => dispatch(decreaseCount({id: item.id}))}
+                                                            onClick={() => dispatch(decreaseCount(item))}
+                                                            sx={{color:"white"}}
                                                             >
                                                             <RemoveIcon />
                                                         </IconButton>
                                                         <Typography>{item.count}</Typography>
                                                         <IconButton
-                                                            onClick={() => dispatch(increaseCount({id: item.id}))}
+                                                            onClick={() => dispatch(increaseCount(item))}
+                                                            sx={{color:"white"}}
                                                             >
                                                             <AddIcon/>
                                                         </IconButton>
                                                     </Box>
                                                     <Typography fontWeight="bold">
-                                                        ${item.attributes.price} 
+                                                        Rs.{item.currentPrice} 
                                                     </Typography>
                                                 </FlexBox>
                                             </Box>
@@ -109,7 +115,7 @@ const CartMenu = () => {
                             <Box m="20px 0">
                                 <FlexBox m="20px 0">
                                     <Typography fontWeight="bold">SUBTOTAL</Typography>
-                                    <Typography fontWeight="bold">${totalPrice}</Typography>
+                                    <Typography fontWeight="bold">Rs.{totalPrice}</Typography>
                                 </FlexBox>
                                 <Button
                                     sx={{
@@ -117,6 +123,8 @@ const CartMenu = () => {
                                         color:"white",
                                         border:1.5,
                                         borderBlockStyle:"solid",
+                                        borderRadius:0,
+                                        letterSpacing:0.2,
                                         borderColor:"white",
                                         minWidth:"100%",
                                         padding:"10px 20px",

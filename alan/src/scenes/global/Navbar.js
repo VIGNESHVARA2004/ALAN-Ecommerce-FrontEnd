@@ -57,7 +57,7 @@ export default function Navbar() {
             sx={{"&:hover" : {cursor :"pointer"}}}
             height = "25px"
             onClick ={() => navigate("/")}
-            alt="logo" src={Image} zIndex='11' ></Box>
+            alt="logo" src={Image} zIndex='11' marginRight="45px"></Box>
 
             <Box
               margin = "0"
