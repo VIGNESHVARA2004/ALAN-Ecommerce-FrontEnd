@@ -31,10 +31,16 @@ ALAN is an e-commerce website dedicated to clothing and shoes. This repository c
 
 ## Dependencies
 
-- @emotion/react: ^11.10.5
-- @emotion/styled: ^11.10.5
-- @mui/icons-material: ^5.10.16
-- ...
+- **@emotion/react and @emotion/styled:** Styling libraries for emotion.
+- **@mui/icons-material and @mui/material:** Material-UI components.
+- **@sanity/client and @sanity/image-url:** Sanity.io libraries for content management.
+- **@testing-library/jest-dom, @testing-library/react, and @testing-library/user-event:** Testing utilities.
+- **dotenv:** Loading environment variables.
+- **node-sass:** SCSS support for styling.
+- **next-sanity-image:** Sanity.io integration for responsive images.
+- **react-redux:** Official React bindings for Redux.
+- **web-vitals:** Web performance measurement.
+- **yup:** Schema-based form validation.
 
 ## Getting Started
 
