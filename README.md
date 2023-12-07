@@ -13,9 +13,6 @@ ALAN is an e-commerce website dedicated to clothing and shoes. This repository c
   <!-- React -->
   <img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat&logo=react&logoColor=white" alt="React">
   
-  <!-- Next.js -->
-  <img src="https://img.shields.io/badge/Next.js-13.1.1-black?style=flat&logo=next.js&logoColor=white" alt="Next.js">
-  
   <!-- Material-UI -->
   <img src="https://img.shields.io/badge/Material--UI-5.10.16-0081CB?style=flat&logo=material-ui&logoColor=white" alt="Material-UI">
 
